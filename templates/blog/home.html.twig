@@ -1,12 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}Welcome to My E-Portfolio{% endblock %}
 
 {% block body %}
-    <style>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to My E-Portfolio</h1>
+    <p class="lead">I'm a passionate developer showcasing my skills and projects.</p>
+    <hr class="my-4">
+    <p>Explore my work and get to know me better.</p>
+    <a class="btn btn-primary btn-lg" href="{{ path('app_cv') }}" role="button">View My CV</a>
+</div>
 
-    </style>
-        <h1>Coucou ✅</h1>
-
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Skills</h5>
+                <p class="card-text">HTML, CSS, JavaScript, PHP, Symfony, React</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Experience</h5>
+                <p class="card-text">5+ years of web development experience</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Projects</h5>
+                <p class="card-text">Check out my latest projects on GitHub</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-

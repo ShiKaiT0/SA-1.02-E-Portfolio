@@ -1,12 +1,401 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Welcome{% endblock %}
-
-{% block body %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
     <style>
-
+        .progress-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        .skill-section {
+            margin-bottom: 2rem;
+        }
+        .section-divider {
+            border-top: 3px solid #375a7f;
+            margin: 3rem 0;
+        }
+        .cert-card {
+            transition: transform 0.2s;
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        .cert-image {
+            max-height: 200px;
+            object-fit: cover;
+        }
     </style>
-        <h1>Coucou ✅</h1>
-
 {% endblock %}
 
+{% block title %}My Skills and Certifications{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="mb-4">Skills and Certifications</h1>
+    
+    <!-- Introduction Section -->
+    <section class="mb-5">
+        <div class="card bg-secondary">
+            <div class="card-body">
+                <h2 class="card-title">Welcome to My Skills and Certifications Page</h2>
+                <p class="card-text">This page showcases my technical skills, professional certifications, and ongoing learning journey in the field of network engineering and programming. Explore the sections below to learn more about my expertise and achievements.</p>
+                
+                <h3 class="mt-4">Quick Navigation</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a href="#certifications" class="nav-link">Official Certifications</a></li>
+                    <li class="nav-item"><a href="#networking-skills" class="nav-link">Networking Skills</a></li>
+                    <li class="nav-item"><a href="#additional-skills" class="nav-link">Additional Technical Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Notable Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Official Certifications Section -->
+    <section id="certifications" class="mb-5">
+        <h2 class="mb-4">Official Certifications Passed</h2>
+        <div class="row">
+            <!-- Certification 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark cert-card">
+                    <img src="https://img-c.udemycdn.com/course/480x270/751094_fb27_2.jpg" class="card-img-top cert-image" alt="Udemy CCNA Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Udemy - CCNA 200-301 Complete Course</h5>
+                        <p class="card-text">Comprehensive course covering all aspects of the CCNA certification, including networking fundamentals, routing and switching technologies, and network security.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cert1Modal">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Certification 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark cert-card">
+                    <img src="https://img-c.udemycdn.com/course/480x270/2196488_8fc7_7.jpg" class="card-img-top cert-image" alt="Udemy Python Network Programming Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Udemy - Python Network Programming</h5>
+                        <p class="card-text">Advanced course on using Python for network automation, covering topics such as socket programming, network protocols, and API integration.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cert2Modal">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Certification 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark cert-card">
+                    <img src="https://img-c.udemycdn.com/course/480x270/1203374_6d6f_3.jpg" class="card-img-top cert-image" alt="Udemy Ethical Hacking Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Udemy - Ethical Hacking from Scratch</h5>
+                        <p class="card-text">In-depth course on ethical hacking and penetration testing, covering various techniques, tools, and methodologies used in cybersecurity.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cert3Modal">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modals -->
+    <div class="modal fade" id="cert1Modal" tabindex="-1" aria-labelledby="cert1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cert1ModalLabel">CCNA 200-301 Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x600.png?text=CCNA+200-301+Certificate" class="img-fluid" alt="CCNA 200-301 Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cert2Modal" tabindex="-1" aria-labelledby="cert2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cert2ModalLabel">Python Network Programming Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x600.png?text=Python+Network+Programming+Certificate" class="img-fluid" alt="Python Network Programming Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cert3Modal" tabindex="-1" aria-labelledby="cert3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cert3ModalLabel">Ethical Hacking Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x600.png?text=Ethical+Hacking+Certificate" class="img-fluid" alt="Ethical Hacking Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Networking Skills Section -->
+    <section id="networking-skills" class="skill-section">
+        <h2 class="mb-4">Networking Skills</h2>
+        
+        <!-- Network Infrastructure -->
+        <div class="mb-4">
+            <h4>Network Infrastructure</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                     role="progressbar" 
+                     style="width: 85%;" 
+                     aria-valuenow="85" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">85%</div>
+            </div>
+            
+            <div class="accordion" id="networkInfraAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="infraHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#infraCollapse">
+                            View Details & Certifications
+                        </button>
+                    </h2>
+                    <div id="infraCollapse" class="accordion-collapse collapse" data-bs-parent="#networkInfraAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ CCNA Routing & Switching</li>
+                                <li>✓ Network Design & Implementation Projects</li>
+                                <li>✓ Experience with Cisco, Juniper, and HP equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Security -->
+        <div class="mb-4">
+            <h4>Network Security</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+                     role="progressbar" 
+                     style="width: 80%;" 
+                     aria-valuenow="80" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">80%</div>
+            </div>
+            
+            <div class="accordion" id="securityAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="securityHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#securityCollapse">
+                            View Details & Certifications
+                        </button>
+                    </h2>
+                    <div id="securityCollapse" class="accordion-collapse collapse" data-bs-parent="#securityAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ CompTIA Security+</li>
+                                <li>✓ Firewall Configuration</li>
+                                <li>✓ IDS/IPS Implementation</li>
+                                <li>✓ VPN Setup and Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Networking -->
+        <div class="mb-4">
+            <h4>Cloud Networking</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" 
+                     role="progressbar" 
+                     style="width: 75%;" 
+                     aria-valuenow="75" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">75%</div>
+            </div>
+            
+            <div class="accordion" id="cloudAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="cloudHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cloudCollapse">
+                            View Details & Certifications
+                        </button>
+                    </h2>
+                    <div id="cloudCollapse" class="accordion-collapse collapse" data-bs-parent="#cloudAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ AWS Cloud Practitioner</li>
+                                <li>✓ Azure Fundamentals</li>
+                                <li>✓ Cloud Network Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Automation -->
+        <div class="mb-4">
+            <h4>Network Automation</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" 
+                     role="progressbar" 
+                     style="width: 70%;" 
+                     aria-valuenow="70" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">70%</div>
+            </div>
+            
+            <div class="accordion" id="automationAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="automationHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#automationCollapse">
+                            View Details & Projects
+                        </button>
+                    </h2>
+                    <div id="automationCollapse" class="accordion-collapse collapse" data-bs-parent="#automationAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ Python Scripting for Network Automation</li>
+                                <li>✓ Ansible Network Automation</li>
+                                <li>✓ Network Configuration Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wireless Networks -->
+        <div class="mb-4">
+            <h4>Wireless Networks</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" 
+                     role="progressbar" 
+                     style="width: 65%;" 
+                     aria-valuenow="65" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">65%</div>
+            </div>
+            
+            <div class="accordion" id="wirelessAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="wirelessHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wirelessCollapse">
+                            View Details & Experience
+                        </button>
+                    </h2>
+                    <div id="wirelessCollapse" class="accordion-collapse collapse" data-bs-parent="#wirelessAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ Wi-Fi Network Design</li>
+                                <li>✓ Wireless Security Implementation</li>
+                                <li>✓ RF Planning and Site Surveys</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Additional Skills Section -->
+    <section id="additional-skills" class="skill-section mt-5">
+        <h2 class="mb-4">Additional Technical Skills</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-secondary mb-3">
+                    <div class="card-header">Operating Systems</div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>✓ Linux Administration</li>
+                            <li>✓ Windows Server</li>
+                            <li>✓ Unix Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-secondary mb-3">
+                    <div class="card-header">Tools & Software</div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>✓ Wireshark</li>
+                            <li>✓ Network Monitoring Tools</li>
+                            <li>✓ Virtualization Platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Notable Projects Section -->
+    <section id="projects" class="mb-5">
+        <h2 class="mb-4">Notable Projects</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card bg-dark h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Network Redesign for SMB</h5>
+                        <p class="card-text">Redesigned and implemented a new network infrastructure for a small business, improving performance and security.</p>
+                        <ul>
+                            <li>Implemented VLANs for traffic segmentation</li>
+                            <li>Set up a pfSense firewall for enhanced security</li>
+                            <li>Deployed a centralized management system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card bg-dark h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Automated Network Monitoring System</h5>
+                        <p class="card-text">Developed a custom network monitoring system using Python and the SNMP protocol.</p>
+                        <ul>
+                            <li>Real-time monitoring of network devices</li>
+                            <li>Automated alert system for network issues</li>
+                            <li>Custom dashboard for network statistics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% block javascripts %}
+<script>
+    // Animate progress bars on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 300);
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% endblock %}
