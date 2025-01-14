@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
     <style>
         .progress-bar {
             transition: width 1.5s ease-in-out;
@@ -23,14 +22,15 @@
             max-height: 200px;
             object-fit: cover;
         }
+        
     </style>
 {% endblock %}
 
-{% block title %}My Skills and Certifications{% endblock %}
+{% block title %}Skills{% endblock %}
 
 {% block body %}
 <div class="container py-5">
-    <h1 class="mb-4">Skills and Certifications</h1>
+    <h1 class="mb-4"><i class="fa-solid fa-book-bookmark"></i> Skills and Certifications</h1>
     
     <!-- Introduction Section -->
     <section class="mb-5">
@@ -54,7 +54,7 @@
 
     <!-- Official Certifications Section -->
     <section id="certifications" class="mb-5">
-        <h2 class="mb-4">Official Certifications Passed</h2>
+        <h2 class="mb-4"><i class="fa-solid fa-hexagon-nodes"></i> Official Certifications Passed</h2>
         <div class="row">
             <!-- Certification 1 -->
             <div class="col-md-4 mb-4">
@@ -139,18 +139,18 @@
 
     <!-- Networking Skills Section -->
     <section id="networking-skills" class="skill-section">
-        <h2 class="mb-4">Networking Skills</h2>
+        <h2 class="mb-4"><i class="fa-solid fa-network-wired"></i> Networking Skills</h2>
         
         <!-- Network Infrastructure -->
         <div class="mb-4">
             <h4>Network Infrastructure</h4>
             <div class="progress mb-2" style="height: 25px;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" 
-                     role="progressbar" 
-                     style="width: 85%;" 
-                     aria-valuenow="85" 
-                     aria-valuemin="0" 
-                     aria-valuemax="100">85%</div>
+                    role="progressbar" 
+                    style="width: 85%;" 
+                    aria-valuenow="85" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100">85%</div>
             </div>
             
             <div class="accordion" id="networkInfraAccordion">
@@ -305,9 +305,80 @@
 
     <div class="section-divider"></div>
 
+    <!-- Networking Skills Section -->
+    <section id="language-skills" class="skill-section">
+        <h2 class="mb-4"><i class="fa-solid fa-language"></i> Language Skills</h2>
+        
+        <!-- Network Infrastructure -->
+        <div class="mb-4">
+            <h4>French</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                    role="progressbar" 
+                    style="width: 100%;" 
+                    aria-valuenow="100" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100">100%</div>
+            </div>
+            
+            <div class="accordion" id="networkInfraAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="infraHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#infraCollapse">
+                            View Details & Certifications
+                        </button>
+                    </h2>
+                    <div id="infraCollapse" class="accordion-collapse collapse" data-bs-parent="#networkInfraAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ CCNA Routing & Switching</li>
+                                <li>✓ Network Design & Implementation Projects</li>
+                                <li>✓ Experience with Cisco, Juniper, and HP equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Infrastructure -->
+        <div class="mb-4">
+            <h4>English</h4>
+            <div class="progress mb-2" style="height: 25px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                    role="progressbar" 
+                    style="width: 80%;" 
+                    aria-valuenow="80" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100">80%</div>
+            </div>
+            
+            <div class="accordion" id="networkInfraAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="infraHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#infraCollapse">
+                            View Details & Certifications
+                        </button>
+                    </h2>
+                    <div id="infraCollapse" class="accordion-collapse collapse" data-bs-parent="#networkInfraAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled">
+                                <li>✓ CCNA Routing & Switching</li>
+                                <li>✓ Network Design & Implementation Projects</li>
+                                <li>✓ Experience with Cisco, Juniper, and HP equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <!-- Additional Skills Section -->
     <section id="additional-skills" class="skill-section mt-5">
-        <h2 class="mb-4">Additional Technical Skills</h2>
+        <h2 class="mb-4"><i class="fa-solid fa-memory"></i> Additional Technical Skills</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="card bg-secondary mb-3">
@@ -340,7 +411,7 @@
 
     <!-- Notable Projects Section -->
     <section id="projects" class="mb-5">
-        <h2 class="mb-4">Notable Projects</h2>
+        <h2 class="mb-4"><i class="fa-solid fa-list-check"></i> Notable Projects</h2>
         <div class="row">
             <div class="col-md-6 mb-4">
                 <div class="card bg-dark h-100">
@@ -374,18 +445,17 @@
 
 {% block javascripts %}
 <script>
-    // Animate progress bars on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        const progressBars = document.querySelectorAll('.progress-bar');
-        progressBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0%';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 300);
-        });
-    });
-
+    // // Animate progress bars on page load
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const progressBars = document.querySelectorAll('.progress-bar');
+    //     progressBars.forEach(bar => {
+    //         const width = bar.style.width;
+    //         bar.style.width = '0%';
+    //         setTimeout(() => {
+    //             bar.style.width = width;
+    //         }, 300);
+    //     });
+    // });
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -396,6 +466,9 @@
         });
     });
 </script>
+
+<script src="https://kit.fontawesome.com/b46286acd6.js" crossorigin="anonymous"></script>
+
 {% endblock %}
 
 {% endblock %}

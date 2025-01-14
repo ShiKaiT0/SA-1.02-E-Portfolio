@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to My E-Portfolio{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .section-divider {
+        border-top: 3px solid #375a7f;
+        margin: 3rem 0;
+    }
+    .card {
+        height: 100%;
+    }
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="jumbotron bg-primary text-white p-5 rounded">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="/placeholder.svg?height=200&width=200" alt="Profile Picture" class="profile-image mb-3">
+            </div>
+            <div class="col-md-8">
+                <h1 class="display-4">Welcome to My E-Portfolio</h1>
+                <p class="lead">I'm John Doe, a passionate full-stack developer showcasing my skills and projects.</p>
+                <hr class="my-4">
+                <p>Explore my work, learn about my journey, and discover how I can contribute to your team.</p>
+                <a class="btn btn-secondary btn-lg" href="{{ path('app_cv') }}" role="button">View My CV</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">About This Website</h2>
+        <p class="text-center">This e-portfolio serves as a comprehensive showcase of my professional journey, skills, and accomplishments. Here's what you'll find:</p>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-person-badge card-icon"></i>
+                        <h5 class="card-title"><i class="fa-solid fa-user-tie"></i> Professional Background</h5>
+                        <p class="card-text">Explore my work history, education, and professional achievements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-code-square card-icon"></i>
+                        <h5 class="card-title"><i class="fa-solid fa-microchip"></i> Technical Skills</h5>
+                        <p class="card-text">Discover my proficiency in various programming languages and tools.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-folder2-open card-icon"></i>
+                        <h5 class="card-title"><i class="fa-solid fa-diagram-project"></i> Project Portfolio</h5>
+                        <p class="card-text">View detailed case studies of my most significant projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">Quick Overview</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Skills</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> HTML, CSS, JavaScript</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> PHP, Symfony</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> React, Vue.js</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> MySQL, MongoDB</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Git, Docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Experience</h5>
+                        <p class="card-text">5+ years of web development experience, including:</p>
+                        <ul>
+                            <li>3 years as Full Stack Developer at TechCorp</li>
+                            <li>2 years as Frontend Developer at WebSolutions Inc.</li>
+                            <li>Multiple freelance projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Projects</h5>
+                        <p class="card-text">Check out my latest projects:</p>
+                        <ul>
+                            <li>E-commerce platform for artisanal products</li>
+                            <li>Task management app with real-time collaboration</li>
+                            <li>AI-powered chatbot for customer service</li>
+                        </ul>
+                        <a href="https://github.com/johndoe" class="btn btn-primary mt-2">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4"><i class="fa-solid fa-star"></i> Featured Project</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="/placeholder.svg?height=300&width=500" alt="Featured Project Screenshot" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>E-commerce Platform for Artisanal Products</h3>
+                <p>A fully responsive e-commerce website built with Symfony and Vue.js, featuring:</p>
+                <ul>
+                    <li>User authentication and profiles</li>
+                    <li>Product catalog with advanced filtering</li>
+                    <li>Shopping cart and secure checkout process</li>
+                    <li>Admin panel for inventory management</li>
+                </ul>
+                <a href="#" class="btn btn-primary">View Case Study</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="text-center">
+        <h2 class="mb-4"><i class="fa-solid fa-link"></i> Let's Connect</h2>
+        <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg"><i class="fa-regular fa-address-card"></i> Contact Me</a>
+        <div class="mt-4">
+            <a href="https://linkedin.com/in/johndoe" class="btn btn-outline-primary me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/johndoe" class="btn btn-outline-primary me-2"><i class="bi bi-github"></i> GitHub</a>
+            <a href="https://twitter.com/johndoe" class="btn btn-outline-primary"><i class="bi bi-twitter"></i> Twitter</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    // Add any custom JavaScript here
+    
+</script>
+{% endblock %}
+

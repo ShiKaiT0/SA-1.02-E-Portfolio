@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class BlogController extends AbstractController
 {
-    #[Route('/blog', name: 'app_blog')]
+    #[Route('/debug', name: 'app_blog')]
     public function index(): Response{
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
@@ -17,21 +17,21 @@ class BlogController extends AbstractController
 
     #[Route('/portfolio/home',name:'app_portofolio_home')]
     public function home(): Response{
-        return $this->render('blog/home.html.twig');
+        return $this->render('blog/portfolio/home.html.twig');
     }
 
     #[Route('/portfolio/skills',name:'app_cv')]
     public function pageone(): Response{
-        return $this->render('blog/page_skills.html.twig');
+        return $this->render('blog/portfolio/page_skills.html.twig');
     }
 
     #[Route('/portfolio/personal',name:'app_personal')]
     public function pagetwo(): Response{
-        return $this->render('blog/page_personal.html.twig');
+        return $this->render('blog/portfolio/page_personal.html.twig');
     }
 
     #[Route('/portfolio/contact',name:'app_contact')] // Where you'll be able to export the CV
     public function pagethree(): Response{
-        return $this->render('blog/page_contact.html.twig');
+        return $this->render('blog/portfolio/page_contact.html.twig');
     }
 }
