@@ -1,0 +1,345 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {# En-tête avec navigation anchor #}
+    <header class="bg-primary text-white py-5 mb-5">
+        <div class="container">
+            <h1 class="display-4">Ingénieur Cybersécurité</h1>
+            <p class="lead">Spécialiste en Réseaux, Cloud Computing & Automatisation</p>
+            
+            <nav class="mt-4">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#formations">
+                            <i class="fas fa-graduation-cap"></i> Formations
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#experiences">
+                            <i class="fas fa-briefcase"></i> Expériences
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#competences">
+                            <i class="fas fa-code-branch"></i> Compétences
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mb-4">
+        <div class="d-flex gap-3 justify-content-end">
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exportModal">
+                <i class="fas fa-file-export"></i> Exporter le Portfolio
+            </button>
+            <a href="{{ path('app_skills') }}" class="btn btn-secondary">
+                <i class="fas fa-folder-open"></i> Justificatifs en détails
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        {# Section Formations #}
+        <section id="formations" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-graduation-cap"></i> Formations
+            </h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">BUT Réseaux & Télécommunications</h5>
+                            <h6 class="card-subtitle mb-2 text-info">2024 - 2025 (en cours)</h6>
+                            <p class="card-text">IUT de Roanne</p>
+                            <div class="card-text">
+                                <p>Formation complète en réseaux et télécommunications avec spécialisation en:</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success"></i> Administration systèmes et réseaux</li>
+                                    <li><i class="fas fa-check text-success"></i> Virtualisation et Cloud Computing</li>
+                                    <li><i class="fas fa-check text-success"></i> Sécurité des réseaux</li>
+                                    <li><i class="fas fa-check text-success"></i> Développement et automatisation</li>
+                                    <li><i class="fas fa-check text-success"></i> Projets en méthodologie Agile</li>
+                                </ul>
+                                <p class="mt-3">
+                                    <i class="fas fa-trophy text-warning"></i> Mention "Très Bien" aux examens du semestre 4
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Terminale - Série Générale</h5>
+                            <h6 class="card-subtitle mb-2 text-info">2021 - 2024</h6>
+                            <p class="card-text">Lycée Galilée (Vienne, 38)</p>
+                            <p>Spécialité  - Mathématiques & Numériques et Sciences Informatiques</p>
+                            <p>Formation ayant permis l'acquisition des compétences suivantes :</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Bases des réseaux</li>
+                                <li><i class="fas fa-check text-success"></i> Bases des systèmes électriques</li>
+                                <li><i class="fas fa-check text-success"></i> Architecture des sytèmes (processeurs,...)</li>
+                                <li><i class="fas fa-check text-success"></i> Intéractions avec des bases de données</li>
+                                <li><i class="fas fa-check text-success"></i> Programmation orienté objet</li>
+                            </ul>
+                            <p class="mt-3">
+                                <i class="fas fa-trophy text-warning"></i> Mention "Bien" obtenue au Baccalauréat
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Section Expériences Professionnelles #}
+        <section id="experiences" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-briefcase"></i> Expériences Professionnelles
+            </h2>
+            
+            <div class="card bg-secondary mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title">Stage - Administration Systèmes & Réseaux</h5>
+                            <h6 class="card-subtitle mb-2 text-info">Entreprise Example</h6>
+                        </div>
+                        <span class="badge bg-primary">2023 - 3 mois</span>
+                    </div>
+                    <p class="card-text mt-3">
+                        Stage de fin de deuxième année focalisé sur la modernisation de l'infrastructure IT :
+                    </p>
+                    <ul>
+                        <li>Mise en place d'une infrastructure de virtualisation avec Proxmox VE
+                            <ul>
+                                <li>Configuration de clusters haute disponibilité</li>
+                                <li>Migration de serveurs physiques vers des VM</li>
+                            </ul>
+                        </li>
+                        <li>Administration de serveurs Linux
+                            <ul>
+                                <li>Déploiement automatisé avec Ansible</li>
+                                <li>Configuration de services (Web, DNS, DHCP)</li>
+                            </ul>
+                        </li>
+                        <li>Configuration de solutions de monitoring
+                            <ul>
+                                <li>Mise en place de Grafana et Prometheus</li>
+                                <li>Création de dashboards personnalisés</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="badge bg-success me-2">Proxmox</span>
+                        <span class="badge bg-success me-2">Ansible</span>
+                        <span class="badge bg-success me-2">Linux</span>
+                        <span class="badge bg-success">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-secondary mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title">Projet Tutoré - Déploiement Cloud</h5>
+                            <h6 class="card-subtitle mb-2 text-info">IUT R&T</h6>
+                        </div>
+                        <span class="badge bg-primary">2023 - 4 mois</span>
+                    </div>
+                    <p class="card-text mt-3">
+                        Projet d'équipe de 4 personnes visant à moderniser l'infrastructure de TP :
+                    </p>
+                    <ul>
+                        <li>Mise en place d'une solution cloud privé avec OpenStack
+                            <ul>
+                                <li>Configuration des services Nova, Neutron et Cinder</li>
+                                <li>Automatisation du déploiement avec Heat</li>
+                            </ul>
+                        </li>
+                        <li>Développement d'une interface web de gestion
+                            <ul>
+                                <li>Frontend en Vue.js</li>
+                                <li>API REST avec FastAPI</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="badge bg-success me-2">OpenStack</span>
+                        <span class="badge bg-success me-2">Vue.js</span>
+                        <span class="badge bg-success me-2">Python</span>
+                        <span class="badge bg-success">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Section Compétences #}
+        <section id="competences" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-code-branch"></i> Compétences
+            </h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-secondary h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">
+                                <i class="fas fa-network-wired"></i> Réseaux
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> TCP/IP</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Switching & Routing</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> VLANs</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> WiFi</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-secondary h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">
+                                <i class="fas fa-server"></i> Systèmes
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Linux</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Windows Server</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Virtualisation</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Docker</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-secondary h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">
+                                <i class="fas fa-shield-alt"></i> Sécurité
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Firewall</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> VPN</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Cryptographie</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><i class="fas fa-check text-success"></i> Sécurité Web</span>
+                                        <div class="progress bg-dark" style="width: 100px">
+                                            <div class="progress-bar bg-success" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {# Modal Export #}
+    <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exportModalLabel">Exporter le Portfolio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-primary" disabled>
+                            <i class="fas fa-file-word"></i> Format Word (.docx)
+                        </button>
+                        <button type="button" class="btn btn-primary" disabled>
+                            <i class="fas fa-file-pdf"></i> Format PDF (.pdf)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

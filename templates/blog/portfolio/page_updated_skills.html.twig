@@ -1,0 +1,240 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="bg-primary text-white py-5 mb-5">
+        <div class="container">
+            <h1 class="display-4">Compétences Détaillées</h1>
+            <nav class="mt-4">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#certifications">
+                            <i class="fas fa-certificate"></i> Certifications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#competences-reseau">
+                            <i class="fas fa-network-wired"></i> Compétences Réseau
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#competences-langues">
+                            <i class="fas fa-language"></i> Compétences en Langues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#outils-logiciels">
+                            <i class="fas fa-tools"></i> Outils et Logiciels
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#projets-lies">
+                            <i class="fas fa-project-diagram"></i> Projets Liés
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Certifications -->
+        <section id="certifications" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-certificate"></i> Certifications
+            </h2>
+            <div id="certificationCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card bg-secondary">
+                            <img src="/placeholder.svg?height=200&width=400" class="card-img-top" alt="Certification Cisco CCNA">
+                            <div class="card-body">
+                                <h5 class="card-title">Cisco CCNA</h5>
+                                <p class="card-text">Certification en réseaux et infrastructure Cisco.</p>
+                                <a href="#" class="btn btn-primary">Voir le certificat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-secondary">
+                            <img src="/placeholder.svg?height=200&width=400" class="card-img-top" alt="Certification Udemy Python">
+                            <div class="card-body">
+                                <h5 class="card-title">Python pour la Data Science</h5>
+                                <p class="card-text">Formation complète sur l'utilisation de Python pour l'analyse de données.</p>
+                                <a href="#" class="btn btn-primary">Voir le certificat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#certificationCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#certificationCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Compétences Réseau -->
+        <section id="competences-reseau" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-network-wired"></i> Compétences Réseau
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>TCP/IP</h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">TCP/IP</h5>
+                            <p class="card-text">Maîtrise approfondie du modèle TCP/IP, incluant la configuration d'adresses IP, le routage, et le dépannage de problèmes de connectivité réseau.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Switching & Routing</h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Switching & Routing</h5>
+                            <p class="card-text">Configuration et gestion de switches et routeurs Cisco, mise en place de VLANs, routage inter-VLAN, et protocoles de routage dynamique (OSPF, EIGRP).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences en Langues -->
+        <section id="competences-langues" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-language"></i> Compétences en Langues
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>Anglais</h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Anglais - Niveau B2</h5>
+                            <p class="card-text">Capacité à communiquer efficacement en anglais dans un contexte professionnel, à lire de la documentation technique, et à rédiger des rapports.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Espagnol</h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Espagnol - Niveau B1</h5>
+                            <p class="card-text">Capacité à comprendre et à s'exprimer dans des situations courantes, avec une bonne base grammaticale et un vocabulaire varié.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outils et Logiciels -->
+        <section id="outils-logiciels" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-tools"></i> Outils et Logiciels
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="position-relative" style="width: 100px; height: 100px;">
+                            <i class="fab fa-python fa-4x text-info position-absolute top-50 start-50 translate-middle"></i>
+                            <svg class="position-absolute top-0 start-0" width="100" height="100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#6c757d" stroke-width="10" />
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#17a2b8" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="56.54" />
+                            </svg>
+                        </div>
+                        <div class="ms-4">
+                            <h5>Python</h5>
+                            <p>Niveau d'acquisition : 80%</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">Langage de programmation polyvalent utilisé pour le développement web, l'analyse de données, et l'automatisation.</p>
+                            <h6>Compétences maîtrisées :</h6>
+                            <ul>
+                                <li>Développement d'applications web avec Django</li>
+                                <li>Analyse de données avec Pandas et NumPy</li>
+                                <li>Automatisation de tâches système</li>
+                            </ul>
+                            <h6>Exemple de projet :</h6>
+                            <p>Développement d'un dashboard de monitoring réseau utilisant Django, Celery, et Plotly pour la visualisation en temps réel des métriques réseau.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="position-relative" style="width: 100px; height: 100px;">
+                            <i class="fab fa-docker fa-4x text-info position-absolute top-50 start-50 translate-middle"></i>
+                            <svg class="position-absolute top-0 start-0" width="100" height="100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#6c757d" stroke-width="10" />
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#17a2b8" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="84.81" />
+                            </svg>
+                        </div>
+                        <div class="ms-4">
+                            <h5>Docker</h5>
+                            <p>Niveau d'acquisition : 70%</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Docker</h5>
+                            <p class="card-text">Plateforme de conteneurisation pour le déploiement et la gestion d'applications.</p>
+                            <h6>Compétences maîtrisées :</h6>
+                            <ul>
+                                <li>Création et gestion de conteneurs Docker</li>
+                                <li>Écriture de Dockerfiles pour la création d'images personnalisées</li>
+                                <li>Orchestration de conteneurs avec Docker Compose</li>
+                            </ul>
+                            <h6>Exemple de projet :</h6>
+                            <p>Mise en place d'une infrastructure de développement local multi-services (base de données, backend, frontend) utilisant Docker Compose pour faciliter le développement et les tests.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets Liés -->
+        <section id="projets-lies" class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">
+                <i class="fas fa-project-diagram"></i> Projets Liés
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard de Monitoring Réseau</h5>
+                            <p class="card-text">Application web de monitoring réseau en temps réel utilisant Django, Celery, et Plotly.</p>
+                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title">Infrastructure de Développement Docker</h5>
+                            <p class="card-text">Mise en place d'un environnement de développement local multi-services avec Docker Compose.</p>
+                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+

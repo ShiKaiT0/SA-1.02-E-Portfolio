@@ -20,7 +20,7 @@ class BlogController extends AbstractController
         return $this->render('blog/portfolio/home.html.twig');
     }
 
-    #[Route('/portfolio/skills',name:'app_cv')]
+    #[Route('/portfolio/skills',name:'app_skills')]
     public function pageone(): Response{
         return $this->render('blog/portfolio/page_skills.html.twig');
     }
@@ -33,5 +33,15 @@ class BlogController extends AbstractController
     #[Route('/portfolio/contact',name:'app_contact')] // Where you'll be able to export the CV
     public function pagethree(): Response{
         return $this->render('blog/portfolio/page_contact.html.twig');
+    }
+
+    #[Route('/portfolio/cv',name:'app_cv')]
+    public function pagefour(): Response{
+        return $this->render('blog/portfolio/page_cv.html.twig');
+    }
+
+    #[Route('/portfolio/updated/skills',name:'app_updated_skills')]
+    public function updatedskills(): Response{
+        return $this->render('blog/portfolio/page_updated_skills.html.twig');
     }
 }
