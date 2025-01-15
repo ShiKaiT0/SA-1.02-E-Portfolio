@@ -1,34 +1,137 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .tool-icon {
+            transition: transform 0.3s ease;
+        }
+        .tool-icon:hover {
+            transform: scale(1.1);
+        }
+        .circular-progress {
+            width: 120px;
+            height: 120px;
+        }
+        .competence-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .competence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .tool-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #certificationCarousel .carousel-control-prev,
+        #certificationCarousel .carousel-control-next {
+            width: 5%;
+        }
+        #certificationCarousel .carousel-inner {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .card img {
+            transition: filter 0.3s ease, brightness 0.3s ease;
+            filter: brightness(80%);
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+        .card:hover img {
+            filter: brightness(110%);
+        }
+        #certificationCarousel .card-img-top {
+            object-fit: contain;
+            height: 150px;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+        }
+        .page-header {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .page-header .lead {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nav-pills .nav-link {
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .nav-pills .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
-    <header class="bg-primary text-white py-5 mb-5">
+    <header class="page-header text-white text-center">
         <div class="container">
-            <h1 class="display-4">Compétences Détaillées</h1>
+            <h1 class="display-4 mb-4">Compétences Détaillées</h1>
+            <p class="lead mb-5">Découvrez mes compétences professionnelles, certifications et projets dans le domaine des réseaux et télécommunications. Cette page présente en détail mes expertises techniques, linguistiques, ainsi que les outils et logiciels que je maîtrise.</p>
             <nav class="mt-4">
-                <ul class="nav nav-pills">
+                <ul class="nav nav-pills justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#certifications">
-                            <i class="fas fa-certificate"></i> Certifications
+                            <i class="fas fa-certificate me-2"></i>Certifications
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#competences-reseau">
-                            <i class="fas fa-network-wired"></i> Compétences Réseau
+                            <i class="fas fa-network-wired me-2"></i>Compétences Réseau
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#competences-langues">
-                            <i class="fas fa-language"></i> Compétences en Langues
+                            <i class="fas fa-language me-2"></i>Compétences en Langues
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#outils-logiciels">
-                            <i class="fas fa-tools"></i> Outils et Logiciels
+                            <i class="fas fa-tools me-2"></i>Outils et Logiciels
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#projets-lies">
-                            <i class="fas fa-project-diagram"></i> Projets Liés
+                            <i class="fas fa-project-diagram me-2"></i>Projets Liés
                         </a>
                     </li>
                 </ul>
@@ -45,22 +148,70 @@
             <div id="certificationCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="card bg-secondary">
-                            <img src="/placeholder.svg?height=200&width=400" class="card-img-top" alt="Certification Cisco CCNA">
-                            <div class="card-body">
-                                <h5 class="card-title">Cisco CCNA</h5>
-                                <p class="card-text">Certification en réseaux et infrastructure Cisco.</p>
-                                <a href="#" class="btn btn-primary">Voir le certificat</a>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://www.cisco.com/c/dam/assets/swa/img/logos/cisco-logo-blue.png" class="card-img-top" alt="Certification Cisco">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Certification Réseau Avancé</h5>
+                                        <p class="card-text">Certification Cisco CCNA en réseaux et infrastructure.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" class="card-img-top" alt="Certification AWS">
+                                    <div class="card-body">
+                                        <h5 class="card-title">AWS Cloud Practitioner</h5>
+                                        <p class="card-text">Certification fondamentale en cloud computing d'Amazon Web Services.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://images.credly.com/size/340x340/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png" class="card-img-top" alt="Certification Google">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Google IT Support</h5>
+                                        <p class="card-text">Certification professionnelle en support informatique de Google.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="card bg-secondary">
-                            <img src="/placeholder.svg?height=200&width=400" class="card-img-top" alt="Certification Udemy Python">
-                            <div class="card-body">
-                                <h5 class="card-title">Python pour la Data Science</h5>
-                                <p class="card-text">Formation complète sur l'utilisation de Python pour l'analyse de données.</p>
-                                <a href="#" class="btn btn-primary">Voir le certificat</a>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" class="card-img-top" alt="Certification Microsoft">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Microsoft Azure Fundamentals</h5>
+                                        <p class="card-text">Certification de base pour les services cloud Microsoft Azure.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://images.credly.com/size/340x340/images/5ca7b236-6105-4154-ba22-c8ae12ec1d8c/Data_Analyst.png" class="card-img-top" alt="Certification IBM">
+                                    <div class="card-body">
+                                        <h5 class="card-title">IBM Data Analyst</h5>
+                                        <p class="card-text">Certification professionnelle en analyse de données d'IBM.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-secondary">
+                                    <img src="https://www.cisco.com/c/dam/assets/swa/img/logos/cisco-logo-blue.png" class="card-img-top" alt="Certification Cisco">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Certification Réseau Avancé</h5>
+                                        <p class="card-text">Certification Cisco CCNA en réseaux et infrastructure.</p>
+                                        <a href="#" class="btn btn-primary">Voir le certificat</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -82,27 +233,57 @@
                 <i class="fas fa-network-wired"></i> Compétences Réseau
             </h2>
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h5>TCP/IP</h5>
-                    <div class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                    </div>
-                    <div class="card bg-secondary">
+                <div class="col-12 mb-4">
+                    <div class="card bg-secondary competence-card">
                         <div class="card-body">
                             <h5 class="card-title">TCP/IP</h5>
-                            <p class="card-text">Maîtrise approfondie du modèle TCP/IP, incluant la configuration d'adresses IP, le routage, et le dépannage de problèmes de connectivité réseau.</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                            </div>
+                            <p class="card-text">Maîtrise approfondie du modèle TCP/IP, incluant :</p>
+                            <ul>
+                                <li>Configuration d'adresses IP et sous-réseaux</li>
+                                <li>Routage statique et dynamique</li>
+                                <li>Dépannage de problèmes de connectivité réseau</li>
+                                <li>Optimisation des performances du réseau</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Plus d'informations</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h5>Switching & Routing</h5>
-                    <div class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-                    </div>
-                    <div class="card bg-secondary">
+                <div class="col-12 mb-4">
+                    <div class="card bg-secondary competence-card">
                         <div class="card-body">
                             <h5 class="card-title">Switching & Routing</h5>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                            </div>
                             <p class="card-text">Configuration et gestion de switches et routeurs Cisco, mise en place de VLANs, routage inter-VLAN, et protocoles de routage dynamique (OSPF, EIGRP).</p>
+                            <ul>
+                                <li>Configuration de VLANs et de trunks</li>
+                                <li>Implémentation de protocoles de routage OSPF et EIGRP</li>
+                                <li>Gestion de la qualité de service (QoS)</li>
+                                <li>Sécurisation des équipements réseau</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Plus d'informations</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="card bg-secondary competence-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sécurité Réseau</h5>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                            <p class="card-text">Mise en place de pare-feu, VPN, et politiques de sécurité réseau. Connaissance des menaces courantes et des meilleures pratiques de sécurisation.</p>
+                            <ul>
+                                <li>Configuration de pare-feu (Firewall)</li>
+                                <li>Mise en place de VPN (Virtual Private Network)</li>
+                                <li>Gestion des accès et des privilèges</li>
+                                <li>Détection et prévention des intrusions</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Plus d'informations</a>
                         </div>
                     </div>
                 </div>
@@ -116,26 +297,32 @@
             </h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <h5>Anglais</h5>
-                    <div class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                    </div>
                     <div class="card bg-secondary">
                         <div class="card-body">
-                            <h5 class="card-title">Anglais - Niveau B2</h5>
-                            <p class="card-text">Capacité à communiquer efficacement en anglais dans un contexte professionnel, à lire de la documentation technique, et à rédiger des rapports.</p>
+                            <h5 class="card-title">
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197560.png" alt="Drapeau français" class="me-2" style="width: 30px; height: 30px;">
+                                Français
+                            </h5>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                            </div>
+                            <p class="card-text">Langue maternelle. Excellente maîtrise à l'écrit et à l'oral.</p>
+                            <a href="#" class="btn btn-primary">Plus d'informations</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <h5>Espagnol</h5>
-                    <div class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                    </div>
                     <div class="card bg-secondary">
                         <div class="card-body">
-                            <h5 class="card-title">Espagnol - Niveau B1</h5>
-                            <p class="card-text">Capacité à comprendre et à s'exprimer dans des situations courantes, avec une bonne base grammaticale et un vocabulaire varié.</p>
+                            <h5 class="card-title">
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="Drapeau anglais" class="me-2" style="width: 30px; height: 30px;">
+                                Anglais
+                            </h5>
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                            </div>
+                            <p class="card-text">Niveau C1. Capacité à communiquer efficacement dans un contexte professionnel.</p>
+                            <a href="#" class="btn btn-primary">Voir le certificat</a>
                         </div>
                     </div>
                 </div>
@@ -149,22 +336,19 @@
             </h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <div class="d-flex align-items-center">
-                        <div class="position-relative" style="width: 100px; height: 100px;">
-                            <i class="fab fa-python fa-4x text-info position-absolute top-50 start-50 translate-middle"></i>
-                            <svg class="position-absolute top-0 start-0" width="100" height="100">
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#6c757d" stroke-width="10" />
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#17a2b8" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="56.54" />
-                            </svg>
-                        </div>
-                        <div class="ms-4">
-                            <h5>Python</h5>
-                            <p>Niveau d'acquisition : 80%</p>
-                        </div>
-                    </div>
-                    <div class="card bg-secondary mt-3">
+                    <div class="card bg-secondary tool-card">
                         <div class="card-body">
-                            <h5 class="card-title">Python</h5>
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="position-relative circular-progress">
+                                    <i class="fab fa-python fa-4x text-info position-absolute top-50 start-50 translate-middle tool-icon"></i>
+                                    <svg class="position-absolute top-0 start-0" width="120" height="120">
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#6c757d" stroke-width="12" />
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#17a2b8" stroke-width="12" stroke-dasharray="339.24" stroke-dashoffset="67.85" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center">Python - 80%</h5>
+                            <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" class="card-img-top mb-3" alt="Python">
                             <p class="card-text">Langage de programmation polyvalent utilisé pour le développement web, l'analyse de données, et l'automatisation.</p>
                             <h6>Compétences maîtrisées :</h6>
                             <ul>
@@ -172,37 +356,82 @@
                                 <li>Analyse de données avec Pandas et NumPy</li>
                                 <li>Automatisation de tâches système</li>
                             </ul>
-                            <h6>Exemple de projet :</h6>
-                            <p>Développement d'un dashboard de monitoring réseau utilisant Django, Celery, et Plotly pour la visualisation en temps réel des métriques réseau.</p>
+                            <a href="#" class="btn btn-primary">Plus d'informations</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <div class="d-flex align-items-center">
-                        <div class="position-relative" style="width: 100px; height: 100px;">
-                            <i class="fab fa-docker fa-4x text-info position-absolute top-50 start-50 translate-middle"></i>
-                            <svg class="position-absolute top-0 start-0" width="100" height="100">
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#6c757d" stroke-width="10" />
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#17a2b8" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="84.81" />
-                            </svg>
-                        </div>
-                        <div class="ms-4">
-                            <h5>Docker</h5>
-                            <p>Niveau d'acquisition : 70%</p>
-                        </div>
-                    </div>
-                    <div class="card bg-secondary mt-3">
+                    <div class="card bg-secondary tool-card">
                         <div class="card-body">
-                            <h5 class="card-title">Docker</h5>
-                            <p class="card-text">Plateforme de conteneurisation pour le déploiement et la gestion d'applications.</p>
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="position-relative circular-progress">
+                                    <i class="fab fa-java fa-4x text-info position-absolute top-50 start-50 translate-middle tool-icon"></i>
+                                    <svg class="position-absolute top-0 start-0" width="120" height="120">
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#6c757d" stroke-width="12" />
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#17a2b8" stroke-width="12" stroke-dasharray="339.24" stroke-dashoffset="101.77" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center">Java - 70%</h5>
+                            <img src="https://www.oracle.com/a/ocom/img/cb71-java-logo.png" class="card-img-top mb-3" alt="Java">
+                            <p class="card-text">Langage de programmation orienté objet utilisé pour le développement d'applications d'entreprise et Android.</p>
                             <h6>Compétences maîtrisées :</h6>
                             <ul>
-                                <li>Création et gestion de conteneurs Docker</li>
-                                <li>Écriture de Dockerfiles pour la création d'images personnalisées</li>
-                                <li>Orchestration de conteneurs avec Docker Compose</li>
+                                <li>Développement d'applications desktop avec JavaFX</li>
+                                <li>Création d'applications web avec Spring Boot</li>
+                                <li>Développement d'applications Android</li>
                             </ul>
-                            <h6>Exemple de projet :</h6>
-                            <p>Mise en place d'une infrastructure de développement local multi-services (base de données, backend, frontend) utilisant Docker Compose pour faciliter le développement et les tests.</p>
+                            <a href="#" class="btn btn-primary">Plus d'informations</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary tool-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="position-relative circular-progress">
+                                    <i class="fas fa-network-wired fa-4x text-info position-absolute top-50 start-50 translate-middle tool-icon"></i>
+                                    <svg class="position-absolute top-0 start-0" width="120" height="120">
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#6c757d" stroke-width="12" />
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#17a2b8" stroke-width="12" stroke-dasharray="339.24" stroke-dashoffset="84.81" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center">Wireshark - 75%</h5>
+                            <img src="https://www.wireshark.org/assets/theme-2015/images/wireshark_logo.png" class="card-img-top mb-3" alt="Wireshark">
+                            <p class="card-text">Outil d'analyse de protocoles réseau pour le dépannage et l'investigation de problèmes de communication.</p>
+                            <h6>Compétences maîtrisées :</h6>
+                            <ul>
+                                <li>Capture et analyse de trafic réseau</li>
+                                <li>Dépannage de problèmes de connectivité</li>
+                                <li>Analyse de sécurité et détection d'intrusions</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Plus d'informations</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card bg-secondary tool-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="position-relative circular-progress">
+                                    <i class="fas fa-film fa-4x text-info position-absolute top-50 start-50 translate-middle tool-icon"></i>
+                                    <svg class="position-absolute top-0 start-0" width="120" height="120">
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#6c757d" stroke-width="12" />
+                                        <circle cx="60" cy="60" r="54" fill="none" stroke="#17a2b8" stroke-width="12" stroke-dasharray="339.24" stroke-dashoffset="135.70" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center">Adobe Premiere Pro - 60%</h5>
+                            <img src="https://www.adobe.com/content/dam/cc/us/en/products/ccoverview/pr_cc_app_RGB.svg" class="card-img-top mb-3" alt="Adobe Premiere Pro">
+                            <p class="card-text">Logiciel de montage vidéo professionnel pour la création de contenu multimédia.</p>
+                            <h6>Compétences maîtrisées :</h6>
+                            <ul>
+                                <li>Montage et édition vidéo</li>
+                                <li>Correction colorimétrique</li>
+                                <li>Création d'effets visuels de base</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Plus d'informations</a>
                         </div>
                     </div>
                 </div>
@@ -217,18 +446,32 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card bg-secondary">
+                        <img src="https://cdn.pixabay.com/photo/2018/05/16/18/16/network-3406932_1280.jpg" class="card-img-top" alt="Dashboard de Monitoring Réseau">
                         <div class="card-body">
                             <h5 class="card-title">Dashboard de Monitoring Réseau</h5>
                             <p class="card-text">Application web de monitoring réseau en temps réel utilisant Django, Celery, et Plotly.</p>
+                            <h6>Compétences utilisées :</h6>
+                            <ul>
+                                <li>Python (Django, Celery)</li>
+                                <li>JavaScript (Plotly)</li>
+                                <li>Analyse de données réseau</li>
+                            </ul>
                             <a href="#" class="btn btn-primary">Voir le projet</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="card bg-secondary">
+                        <img src="https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704_1280.jpg" class="card-img-top" alt="Infrastructure de Développement Docker">
                         <div class="card-body">
                             <h5 class="card-title">Infrastructure de Développement Docker</h5>
                             <p class="card-text">Mise en place d'un environnement de développement local multi-services avec Docker Compose.</p>
+                            <h6>Compétences utilisées :</h6>
+                            <ul>
+                                <li>Docker et Docker Compose</li>
+                                <li>Configuration de services réseau</li>
+                                <li>Scripting Bash</li>
+                            </ul>
                             <a href="#" class="btn btn-primary">Voir le projet</a>
                         </div>
                     </div>
