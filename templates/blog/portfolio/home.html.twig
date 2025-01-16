@@ -1,164 +1,174 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Welcome to My E-Portfolio{% endblock %}
+{% block title %}Bienvenue sur Mon E-Portfolio{% endblock %}
 
 {% block stylesheets %}
 {{ parent() }}
 <style>
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
     .profile-image {
         width: 200px;
         height: 200px;
         object-fit: cover;
         border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.2);
     }
-    .section-divider {
-        border-top: 3px solid #375a7f;
-        margin: 3rem 0;
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        text-align: center;
     }
     .card {
-        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        transition: transform 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
     }
     .card-icon {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
+    }
+    .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
 </style>
 {% endblock %}
 
 {% block body %}
 <div class="container py-5">
-    <div class="jumbotron bg-primary text-white p-5 rounded">
+    <div class="glass-card mb-5">
         <div class="row align-items-center">
             <div class="col-md-4 text-center">
-                <img src="/placeholder.svg?height=200&width=200" alt="Profile Picture" class="profile-image mb-3">
+                <img src="/placeholder.svg?height=200&width=200" alt="Photo de profil" class="profile-image mb-3">
             </div>
             <div class="col-md-8">
-                <h1 class="display-4">Welcome to My E-Portfolio</h1>
-                <p class="lead">I'm John Doe, a passionate full-stack developer showcasing my skills and projects.</p>
+                <h1 class="display-4 mb-4">Bienvenue sur Mon E-Portfolio</h1>
+                <p class="lead">Je suis John Doe, un développeur full-stack passionné présentant mes compétences et projets.</p>
                 <hr class="my-4">
-                <p>Explore my work, learn about my journey, and discover how I can contribute to your team.</p>
-                <a class="btn btn-secondary btn-lg" href="{{ path('app_cv') }}" role="button">View My CV</a>
+                <p>Explorez mon travail, découvrez mon parcours et voyez comment je peux contribuer à votre équipe.</p>
+                <a class="btn btn-outline-light btn-lg mt-3" href="{{ path('app_cv') }}" role="button">Voir Mon CV</a>
             </div>
         </div>
     </div>
 
-    <div class="section-divider"></div>
-
     <section class="mb-5">
-        <h2 class="text-center mb-4">About This Website</h2>
-        <p class="text-center">This e-portfolio serves as a comprehensive showcase of my professional journey, skills, and accomplishments. Here's what you'll find:</p>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="bi bi-person-badge card-icon"></i>
-                        <h5 class="card-title"><i class="fa-solid fa-user-tie"></i> Professional Background</h5>
-                        <p class="card-text">Explore my work history, education, and professional achievements.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="bi bi-code-square card-icon"></i>
-                        <h5 class="card-title"><i class="fa-solid fa-microchip"></i> Technical Skills</h5>
-                        <p class="card-text">Discover my proficiency in various programming languages and tools.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="bi bi-folder2-open card-icon"></i>
-                        <h5 class="card-title"><i class="fa-solid fa-diagram-project"></i> Project Portfolio</h5>
-                        <p class="card-text">View detailed case studies of my most significant projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="mb-5">
-        <h2 class="text-center mb-4">Quick Overview</h2>
+        <h2 class="section-title">À Propos de Ce Site</h2>
+        <p class="text-center mb-5">Cet e-portfolio est une vitrine complète de mon parcours professionnel, de mes compétences et de mes réalisations. Voici ce que vous y trouverez :</p>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card text-center h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Skills</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-check-circle-fill text-success"></i> HTML, CSS, JavaScript</li>
-                            <li><i class="bi bi-check-circle-fill text-success"></i> PHP, Symfony</li>
-                            <li><i class="bi bi-check-circle-fill text-success"></i> React, Vue.js</li>
-                            <li><i class="bi bi-check-circle-fill text-success"></i> MySQL, MongoDB</li>
-                            <li><i class="bi bi-check-circle-fill text-success"></i> Git, Docker</li>
-                        </ul>
+                        <i class="fas fa-user-tie card-icon"></i>
+                        <h5 class="card-title">Parcours Professionnel</h5>
+                        <p class="card-text">Explorez mon historique professionnel, ma formation et mes réalisations.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card text-center h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Experience</h5>
-                        <p class="card-text">5+ years of web development experience, including:</p>
-                        <ul>
-                            <li>3 years as Full Stack Developer at TechCorp</li>
-                            <li>2 years as Frontend Developer at WebSolutions Inc.</li>
-                            <li>Multiple freelance projects</li>
-                        </ul>
+                        <i class="fas fa-microchip card-icon"></i>
+                        <h5 class="card-title">Compétences Techniques</h5>
+                        <p class="card-text">Découvrez ma maîtrise de divers langages de programmation et outils.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card text-center h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Projects</h5>
-                        <p class="card-text">Check out my latest projects:</p>
-                        <ul>
-                            <li>E-commerce platform for artisanal products</li>
-                            <li>Task management app with real-time collaboration</li>
-                            <li>AI-powered chatbot for customer service</li>
-                        </ul>
-                        <a href="https://github.com/johndoe" class="btn btn-primary mt-2">View on GitHub</a>
+                        <i class="fas fa-diagram-project card-icon"></i>
+                        <h5 class="card-title">Portfolio de Projets</h5>
+                        <p class="card-text">Consultez des études de cas détaillées de mes projets les plus significatifs.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="section-divider"></div>
 
     <section class="mb-5">
-        <h2 class="text-center mb-4"><i class="fa-solid fa-star"></i> Featured Project</h2>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="/placeholder.svg?height=300&width=500" alt="Featured Project Screenshot" class="img-fluid rounded">
+        <h2 class="section-title">Aperçu Rapide</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="glass-card h-100">
+                    <h5 class="card-title">Compétences</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle text-success me-2"></i> HTML, CSS, JavaScript</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> PHP, Symfony</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> React, Vue.js</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> MySQL, MongoDB</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Git, Docker</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>E-commerce Platform for Artisanal Products</h3>
-                <p>A fully responsive e-commerce website built with Symfony and Vue.js, featuring:</p>
-                <ul>
-                    <li>User authentication and profiles</li>
-                    <li>Product catalog with advanced filtering</li>
-                    <li>Shopping cart and secure checkout process</li>
-                    <li>Admin panel for inventory management</li>
-                </ul>
-                <a href="#" class="btn btn-primary">View Case Study</a>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card h-100">
+                    <h5 class="card-title">Expérience</h5>
+                    <p>Plus de 5 ans d'expérience en développement web, dont :</p>
+                    <ul>
+                        <li>3 ans en tant que Développeur Full Stack chez TechCorp</li>
+                        <li>2 ans en tant que Développeur Frontend chez WebSolutions Inc.</li>
+                        <li>Plusieurs projets freelance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card h-100">
+                    <h5 class="card-title">Projets</h5>
+                    <p>Découvrez mes derniers projets :</p>
+                    <ul>
+                        <li>Plateforme e-commerce pour produits artisanaux</li>
+                        <li>Application de gestion de tâches avec collaboration en temps réel</li>
+                        <li>Chatbot alimenté par IA pour le service client</li>
+                    </ul>
+                    <a href="https://github.com/johndoe" class="btn btn-outline-light mt-3">Voir sur GitHub</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-star me-2"></i>Projet en Vedette</h2>
+        <div class="glass-card">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Capture d'écran du projet vedette" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-4">Plateforme E-commerce pour Produits Artisanaux</h3>
+                    <p>Un site e-commerce entièrement responsive construit avec Symfony et Vue.js, comprenant :</p>
+                    <ul>
+                        <li>Authentification des utilisateurs et profils</li>
+                        <li>Catalogue de produits avec filtrage avancé</li>
+                        <li>Panier d'achat et processus de paiement sécurisé</li>
+                        <li>Panneau d'administration pour la gestion des stocks</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-light mt-3">Voir l'Étude de Cas</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="text-center">
-        <h2 class="mb-4"><i class="fa-solid fa-link"></i> Let's Connect</h2>
-        <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg"><i class="fa-regular fa-address-card"></i> Contact Me</a>
+    <section class="text-center mb-5">
+        <h2 class="section-title"><i class="fas fa-link me-2"></i>Restons en Contact</h2>
+        <p class="mb-4">Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter !</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg mb-4"><i class="far fa-address-card me-2"></i>Me Contacter</a>
         <div class="mt-4">
-            <a href="https://linkedin.com/in/johndoe" class="btn btn-outline-primary me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/johndoe" class="btn btn-outline-primary me-2"><i class="bi bi-github"></i> GitHub</a>
-            <a href="https://twitter.com/johndoe" class="btn btn-outline-primary"><i class="bi bi-twitter"></i> Twitter</a>
+            <a href="https://linkedin.com/in/johndoe" class="btn btn-outline-light me-2 mb-2"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+            <a href="https://github.com/johndoe" class="btn btn-outline-light me-2 mb-2"><i class="fab fa-github me-2"></i>GitHub</a>
+            <a href="https://twitter.com/johndoe" class="btn btn-outline-light mb-2"><i class="fab fa-twitter me-2"></i>Twitter</a>
         </div>
     </section>
 </div>
@@ -167,8 +177,7 @@
 {% block javascripts %}
 {{ parent() }}
 <script>
-    // Add any custom JavaScript here
-    
+    // Ajoutez ici tout JavaScript personnalisé si nécessaire
 </script>
 {% endblock %}
 

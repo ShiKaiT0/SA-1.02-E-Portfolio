@@ -1,91 +1,113 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}About Me - Projects & Compositions{% endblock %}
+{% block title %}À Propos de Moi - Projets & Compositions{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
-    <style>
-        .project-card {
-            transition: transform 0.2s;
-            margin-bottom: 2rem;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .section-divider {
-            border-top: 3px solid #375a7f;
-            margin: 3rem 0;
-        }
-        .about-me-card {
-            background-color: #2c3e50;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        .nav-pills .nav-link {
-            color: #fff;
-            background-color: #375a7f;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        .nav-pills .nav-link:hover {
-            background-color: #2c3e50;
-        }
-    </style>
+{{ parent() }}
+<style>
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    .project-card {
+        transition: transform 0.2s;
+        margin-bottom: 2rem;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .section-divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 3rem 0;
+    }
+    .nav-pills .nav-link {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+    }
+    .nav-pills .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #ffffff;
+    }
+    .accordion-button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+    .accordion-button:not(.collapsed) {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+    }
+    .accordion-body {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+    }
+</style>
 {% endblock %}
 
 {% block body %}
 <div class="container py-5">
     <!-- About Me Section -->
     <section id="about-me" class="mb-5">
-        <h1 class="display-4 mb-4">About Me</h1>
-        <div class="about-me-card">
+        <h1 class="section-title">À Propos de Moi</h1>
+        <div class="glass-card">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <img src="https://via.placeholder.com/300" alt="Your Name" class="img-fluid rounded-circle">
+                    <img src="https://via.placeholder.com/300" alt="Votre Nom" class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-8">
-                    <h2>Your Name</h2>
-                    <p class="lead">Network Engineering Student | Programmer | Music Composer</p>
-                    <p>I'm a passionate network engineering student with a love for programming and music composition. My diverse interests allow me to bring a unique perspective to my projects and collaborations.</p>
+                    <h2>Votre Nom</h2>
+                    <p class="lead">Étudiant en Ingénierie Réseau | Programmeur | Compositeur de Musique</p>
+                    <p>Je suis un étudiant passionné en ingénierie réseau avec un amour pour la programmation et la composition musicale. Mes intérêts variés me permettent d'apporter une perspective unique à mes projets et collaborations.</p>
                     
-                    <h3 class="mt-4">My Interests</h3>
+                    <h3 class="mt-4">Mes Intérêts</h3>
                     <ul>
-                        <li>Network infrastructure and security</li>
-                        <li>Game development and modding</li>
-                        <li>Music composition and production</li>
-                        <li>Open-source software contribution</li>
+                        <li>Infrastructure réseau et sécurité</li>
+                        <li>Développement de jeux et modding</li>
+                        <li>Composition et production musicale</li>
+                        <li>Contribution aux logiciels open-source</li>
                     </ul>
                     
-                    <h3 class="mt-4">Hobbies</h3>
+                    <h3 class="mt-4">Loisirs</h3>
                     <ul>
-                        <li>Playing and modding video games</li>
-                        <li>Composing electronic and orchestral music</li>
-                        <li>Hiking and nature photography</li>
-                        <li>Reading sci-fi and technical literature</li>
+                        <li>Jouer et modder des jeux vidéo</li>
+                        <li>Composer de la musique électronique et orchestrale</li>
+                        <li>Randonnée et photographie de nature</li>
+                        <li>Lecture de science-fiction et de littérature technique</li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <!-- Navigation Pills -->
-        <nav class="nav nav-pills flex-column flex-sm-row">
-            <a class="flex-sm-fill text-sm-center nav-link" href="#programming-projects">Programming Projects</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#music-composition">Music Composition</a>
+        <nav class="nav nav-pills flex-column flex-sm-row mt-4">
+            <a class="flex-sm-fill text-sm-center nav-link" href="#programming-projects">Projets de Programmation</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="#music-composition">Composition Musicale</a>
         </nav>
     </section>
 
@@ -93,107 +115,100 @@
 
     <!-- Programming Projects Section -->
     <section id="programming-projects" class="mb-5">
-        <h1 class="display-4 mb-4">Programming Projects</h1>
+        <h1 class="section-title">Projets de Programmation</h1>
         
         <!-- Garry's Mod Projects -->
         <div class="mb-5">
-            <h2 class="h2 mb-4">Garry's Mod Projects</h2>
+            <h2 class="h2 mb-4">Projets Garry's Mod</h2>
             
             <!-- Project 1 -->
-            <div class="card bg-dark project-card">
-                <div class="card-body">
-                    <h3 class="card-title">Custom DarkRP Gamemode Enhancement</h3>
-                    <div class="video-container">
-                        <!-- Replace YOUR_VIDEO_ID with actual YouTube video ID -->
-                        <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
-                    </div>
-                    <div class="card-text">
-                        <h4>Project Overview</h4>
-                        <p>A comprehensive enhancement for the DarkRP gamemode, adding custom features and improving gameplay mechanics.</p>
-                        
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Custom job system with progression</li>
-                            <li>Enhanced economy system</li>
-                            <li>Unique crafting mechanics</li>
-                        </ul>
-                        
-                        <h4>Technical Details</h4>
-                        <p>Developed using Lua with integration into the Source engine. Implements custom networking protocols for seamless multiplayer experience.</p>
-                    </div>
+            <div class="glass-card project-card">
+                <h3 class="card-title">Amélioration du Mode de Jeu DarkRP Personnalisé</h3>
+                <div class="video-container">
+                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="card-text">
+                    <h4>Aperçu du Projet</h4>
+                    <p>Une amélioration complète du mode de jeu DarkRP, ajoutant des fonctionnalités personnalisées et améliorant les mécaniques de jeu.</p>
+                    
+                    <h4>Caractéristiques Principales</h4>
+                    <ul>
+                        <li>Système d'emploi personnalisé avec progression</li>
+                        <li>Système économique amélioré</li>
+                        <li>Mécaniques de fabrication uniques</li>
+                    </ul>
+                    
+                    <h4>Détails Techniques</h4>
+                    <p>Développé en utilisant Lua avec intégration dans le moteur Source. Implémente des protocoles de réseau personnalisés pour une expérience multijoueur fluide.</p>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="card bg-dark project-card mt-4">
-                <div class="card-body">
-                    <h3 class="card-title">Advanced Admin Tools Suite</h3>
-                    <div class="video-container">
-                        <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
-                    </div>
-                    <div class="card-text">
-                        <h4>Project Overview</h4>
-                        <p>A comprehensive admin management system for Garry's Mod servers, providing advanced moderation tools.</p>
-                        
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Real-time player monitoring</li>
-                            <li>Advanced permission system</li>
-                            <li>Customizable command framework</li>
-                        </ul>
-                        
-                        <h4>Technical Details</h4>
-                        <p>Built with Lua, featuring a modular architecture for easy expansion and customization.</p>
-                    </div>
+            <div class="glass-card project-card mt-4">
+                <h3 class="card-title">Suite d'Outils Administratifs Avancés</h3>
+                <div class="video-container">
+                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="card-text">
+                    <h4>Aperçu du Projet</h4>
+                    <p>Un système complet de gestion administrative pour les serveurs Garry's Mod, fournissant des outils de modération avancés.</p>
+                    
+                    <h4>Caractéristiques Principales</h4>
+                    <ul>
+                        <li>Surveillance des joueurs en temps réel</li>
+                        <li>Système de permissions avancé</li>
+                        <li>Cadre de commandes personnalisable</li>
+                    </ul>
+                    
+                    <h4>Détails Techniques</h4>
+                    <p>Construit avec Lua, présentant une architecture modulaire pour une expansion et une personnalisation faciles.</p>
                 </div>
             </div>
         </div>
 
         <!-- Minecraft Projects -->
         <div class="mb-5">
-            <h2 class="h2 mb-4">Minecraft Mods/Plug-ins</h2>
-            <div class="card bg-dark project-card">
-                <div class="card-body">
-                    <h3 class="card-title">Custom Server Plugin Suite</h3>
-                    <div class="video-container">
-                        <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
-                    </div>
-                    <div class="card-text">
-                        <h4>Project Overview</h4>
-                        <p>A collection of custom plugins designed to enhance multiplayer gameplay and server management.</p>
-                        
-                        <h4>Components</h4>
-                        <div class="accordion" id="pluginAccordion">
-                            <!-- Economy Plugin -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#economyCollapse">
-                                        Economy System
-                                    </button>
-                                </h2>
-                                <div id="economyCollapse" class="accordion-collapse collapse" data-bs-parent="#pluginAccordion">
-                                    <div class="accordion-body">
-                                        <p>Advanced economy system with shop integration and player-to-player trading.</p>
-                                    </div>
+            <h2 class="h2 mb-4">Mods/Plug-ins Minecraft</h2>
+            <div class="glass-card project-card">
+                <h3 class="card-title">Suite de Plugins Serveur Personnalisés</h3>
+                <div class="video-container">
+                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="card-text">
+                    <h4>Aperçu du Projet</h4>
+                    <p>Une collection de plugins personnalisés conçus pour améliorer le gameplay multijoueur et la gestion du serveur.</p>
+                    
+                    <h4>Composants</h4>
+                    <div class="accordion" id="pluginAccordion">
+                        <!-- Economy Plugin -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#economyCollapse">
+                                    Système Économique
+                                </button>
+                            </h2>
+                            <div id="economyCollapse" class="accordion-collapse collapse" data-bs-parent="#pluginAccordion">
+                                <div class="accordion-body">
+                                    <p>Système économique avancé avec intégration de boutique et échanges entre joueurs.</p>
                                 </div>
                             </div>
-                            <!-- Custom Events -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eventsCollapse">
-                                        Custom Events System
-                                    </button>
-                                </h2>
-                                <div id="eventsCollapse" class="accordion-collapse collapse" data-bs-parent="#pluginAccordion">
-                                    <div class="accordion-body">
-                                        <p>Automated event system with customizable rewards and participation tracking.</p>
-                                    </div>
+                        </div>
+                        <!-- Custom Events -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eventsCollapse">
+                                    Système d'Événements Personnalisés
+                                </button>
+                            </h2>
+                            <div id="eventsCollapse" class="accordion-collapse collapse" data-bs-parent="#pluginAccordion">
+                                <div class="accordion-body">
+                                    <p>Système d'événements automatisé avec récompenses personnalisables et suivi de la participation.</p>
                                 </div>
                             </div>
                         </div>
@@ -207,60 +222,56 @@
 
     <!-- Music Composition Section -->
     <section id="music-composition" class="mb-5">
-        <h1 class="display-4 mb-4">Music Composition</h1>
+        <h1 class="section-title">Composition Musicale</h1>
         
         <!-- Original Compositions -->
         <div class="mb-5">
-            <h2 class="h2 mb-4">My Original Compositions</h2>
+            <h2 class="h2 mb-4">Mes Compositions Originales</h2>
             
             <!-- Composition Grid -->
             <div class="row">
                 <!-- Composition 1 -->
                 <div class="col-md-6 mb-4">
-                    <div class="card bg-dark project-card">
-                        <div class="card-body">
-                            <h3 class="card-title">Composition Title 1</h3>
-                            <div class="video-container">
-                                <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
-                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen></iframe>
-                            </div>
-                            <div class="card-text">
-                                <h4>About this Piece</h4>
-                                <p>Description of the composition, inspiration, and technical details.</p>
-                                
-                                <h4>Technical Details</h4>
-                                <ul>
-                                    <li>Genre: Classical/Electronic/etc.</li>
-                                    <li>Instruments: Piano, Strings, etc.</li>
-                                    <li>Duration: X minutes</li>
-                                </ul>
-                            </div>
+                    <div class="glass-card project-card">
+                        <h3 class="card-title">Titre de la Composition 1</h3>
+                        <div class="video-container">
+                            <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="card-text">
+                            <h4>À Propos de ce Morceau</h4>
+                            <p>Description de la composition, inspiration et détails techniques.</p>
+                            
+                            <h4>Détails Techniques</h4>
+                            <ul>
+                                <li>Genre : Classique/Électronique/etc.</li>
+                                <li>Instruments : Piano, Cordes, etc.</li>
+                                <li>Durée : X minutes</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Composition 2 -->
                 <div class="col-md-6 mb-4">
-                    <div class="card bg-dark project-card">
-                        <div class="card-body">
-                            <h3 class="card-title">Composition Title 2</h3>
-                            <div class="video-container">
-                                <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
-                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen></iframe>
-                            </div>
-                            <div class="card-text">
-                                <h4>About this Piece</h4>
-                                <p>Description of the composition, inspiration, and technical details.</p>
-                                
-                                <h4>Technical Details</h4>
-                                <ul>
-                                    <li>Genre: Classical/Electronic/etc.</li>
-                                    <li>Instruments: Piano, Strings, etc.</li>
-                                    <li>Duration: X minutes</li>
-                                </ul>
-                            </div>
+                    <div class="glass-card project-card">
+                        <h3 class="card-title">Titre de la Composition 2</h3>
+                        <div class="video-container">
+                            <iframe src="about:blank" data-src="https://www.youtube.com/embed/UUMTJr9ueG0" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="card-text">
+                            <h4>À Propos de ce Morceau</h4>
+                            <p>Description de la composition, inspiration et détails techniques.</p>
+                            
+                            <h4>Détails Techniques</h4>
+                            <ul>
+                                <li>Genre : Classique/Électronique/etc.</li>
+                                <li>Instruments : Piano, Cordes, etc.</li>
+                                <li>Durée : X minutes</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -270,6 +281,7 @@
 </div>
 
 {% block javascripts %}
+{{ parent() }}
 <script>
     // Lazy load YouTube iframes
     document.addEventListener('DOMContentLoaded', function() {
