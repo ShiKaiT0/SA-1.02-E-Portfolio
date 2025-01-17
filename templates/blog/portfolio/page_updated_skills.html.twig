@@ -145,6 +145,26 @@
             margin-bottom: 0.5rem;
             color: #ffffff;
         }
+        .project-card {
+            height: 500px;
+            overflow: hidden;
+        }
+        .project-card .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
+        .accordion-button {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        .accordion-body {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+        }
         #projetsApprentissagesCarousel .card {
             height: 600px;
             overflow: hidden;
@@ -250,7 +270,39 @@
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(255,255,255,0.1);
         }
+        #projectCarousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
+        #projectCarousel .carousel-control-prev,
+        #projectCarousel .carousel-control-next {
+            width: 5%;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            height: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #projectCarousel .carousel-control-prev {
+            left: -60px;
+        }
+
+        #projectCarousel .carousel-control-next {
+            right: -60px;
+        }
+
+        .project-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-card .card-body {
+            height: 200px;
+            overflow-y: auto;
+        }
     </style>
 {% endblock %}
 
@@ -535,82 +587,113 @@
         </section>
 
         <!-- Projets et Apprentissages -->
-        <section id="projets-apprentissages" class="mb-5">
-            <h2 class="border-bottom pb-2 mb-4 text-white">
+        <section id="projets-apprentissages" class="mb-5 container">
+            <h2 class="section-title">
                 <i class="fas fa-project-diagram"></i> Projets et Apprentissages Critiques
             </h2>
-            <div id="projetsApprentissagesCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="glass-card">
-                            <img src="https://cdn.pixabay.com/photo/2018/05/16/18/16/network-3406932_1280.jpg" class="card-img" alt="Dashboard de Monitoring Réseau">
-                            <div class="card-img-overlay">
-                                <div>
-                                    <h3 class="card-title">Dashboard de Monitoring Réseau</h3>
+                        <div class="project-container">
+                            <div class="card project-card">
+                                <img src="https://source.unsplash.com/random/800x600?technology" class="card-img-top" alt="Project Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dashboard de Monitoring Réseau</h5>
                                     <p class="card-text">Application web de monitoring réseau en temps réel utilisant Django, Celery, et Plotly.</p>
+                                    <a href="#" class="btn btn-primary">Voir le projet</a>
                                 </div>
-                                <div class="apprentissages mt-3">
-                                    <h4 class="text-white">Apprentissages critiques concernés :</h4>
-                                    <div class="ac-item">
-                                        <h5>AC1.01 : Organiser un poste de travail</h5>
-                                        <p>Mise en place d'un environnement de développement efficace pour le projet.</p>
-                                        <div class="btn-group">
-                                            <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                            <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                            </div>
+                            <div class="accordion mt-3" id="accordionProject1">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            AC1.01 : Organiser un poste de travail
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionProject1">
+                                        <div class="accordion-body">
+                                            <p>Mise en place d'un environnement de développement efficace pour le projet.</p>
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
+                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="ac-item mt-2">
-                                        <h5>AC1.03 : Configurer un routeur</h5>
-                                        <p>Configuration des équipements réseau pour la collecte de données.</p>
-                                        <div class="btn-group">
-                                            <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                            <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            AC1.03 : Configurer un routeur
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionProject1">
+                                        <div classbody">
+                                            <p>Configuration des équipements réseau pour la collecte de données.</p>
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
+                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="btn btn-primary mt-3">Lien du Projet</a>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="glass-card">
-                            <img src="https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704_1280.jpg" class="card-img" alt="Infrastructure de Développement Docker">
-                            <div class="card-img-overlay">
-                                <div>
-                                    <h3 class="card-title">Infrastructure de Développement Docker</h3>
+                        <div class="project-container">
+                            <div class="card project-card">
+                                <img src="https://source.unsplash.com/random/800x600?network" class="card-img-top" alt="Project Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Infrastructure de Développement Docker</h5>
                                     <p class="card-text">Mise en place d'un environnement de développement local multi-services avec Docker Compose.</p>
+                                    <a href="#" class="btn btn-primary">Voir le projet</a>
                                 </div>
-                                <div class="apprentissages mt-3">
-                                    <h4 class="text-white">Apprentissages critiques concernés :</h4>
-                                    <div class="ac-item">
-                                        <h5>AC1.02 : Installer un système d'exploitation</h5>
-                                        <p>Configuration des conteneurs Docker avec différents systèmes d'exploitation.</p>
-                                        <div class="btn-group">
-                                            <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                            <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                            </div>
+                            <div class="accordion mt-3" id="accordionProject2">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            AC1.02 : Installer un système d'exploitation
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProject2">
+                                        <div class="accordion-body">
+                                            <p>Configuration des conteneurs Docker avec différents systèmes d'exploitation.</p>
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
+                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="ac-item mt-2">
-                                        <h5>AC1.04 : Configurer un commutateur</h5>
-                                        <p>Mise en place d'un réseau virtuel pour les conteneurs Docker.</p>
-                                        <div class="btn-group">
-                                            <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                            <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            AC1.04 : Configurer un commutateur
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionProject2">
+                                        <div class="accordion-body">
+                                            <p>Mise en place d'un réseau virtuel pour les conteneurs Docker.</p>
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
+                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="btn btn-primary mt-3">Lien du Projet</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#projetsApprentissagescarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Précédent</span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#projetsApprentissagesCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Suivant</span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </section>
