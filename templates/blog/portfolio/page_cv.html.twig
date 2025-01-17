@@ -18,12 +18,35 @@
         text-align: center;
         color: #ffffff;
     }
+    .page-header {
+        background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+        padding: 5rem 0;
+        margin-bottom: 3.75rem;
+        box-shadow: 0 5px 7.5px rgba(0,0,0,0.1);
+    }
+    .page-header h1 {
+        font-size: 3.75rem;
+        font-weight: 700;
+        text-shadow: 2.5px 2.5px 5px rgba(0,0,0,0.1);
+        color: #ffffff;
+    }
+    .page-header .lead {
+        font-size: 1.5625rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
     .nav-pills .nav-link {
         color: #ffffff;
         background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 37.5px;
+        padding: 0.625rem 1.25rem;
+        margin: 0.3125rem;
         transition: all 0.3s ease;
     }
     .nav-pills .nav-link:hover {
+        transform: translateY(-2.5px);
+        box-shadow: 0 5px 7.5px rgba(255,255,255,0.1);
         background-color: rgba(255, 255, 255, 0.2);
     }
     .btn-outline-light {
@@ -42,31 +65,37 @@
         background-color: rgba(255, 255, 255, 0.2);
         color: #ffffff;
     }
+    .formation-card, .competence-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .formation-card:hover, .competence-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+    }
 </style>
 {% endblock %}
 
 {% block body %}
-    {# En-tête avec navigation anchor #}
-    <header class="text-white py-5 mb-5 glass-card">
+    <header class="page-header text-white text-center">
         <div class="container">
-            <h1 class="display-4">Ingénieur Cybersécurité</h1>
-            <p class="lead">Spécialiste en Réseaux, Cloud Computing & Automatisation</p>
+            <h1 class="display-4 mb-4">Ingénieur Cybersécurité</h1>
+            <p class="lead mb-5">Spécialiste en Réseaux, Cloud Computing & Automatisation</p>
             
             <nav class="mt-4">
-                <ul class="nav nav-pills">
+                <ul class="nav nav-pills justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#formations">
-                            <i class="fas fa-graduation-cap"></i> Formations
+                            <i class="fas fa-graduation-cap me-2"></i>Formations
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#experiences">
-                            <i class="fas fa-briefcase"></i> Expériences
+                            <i class="fas fa-briefcase me-2"></i>Expériences
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#competences">
-                            <i class="fas fa-code-branch"></i> Compétences
+                            <i class="fas fa-code-branch me-2"></i>Compétences
                         </a>
                     </li>
                 </ul>
@@ -94,7 +123,7 @@
             
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <div class="glass-card">
+                    <div class="glass-card formation-card">
                         <h5 class="card-title">BUT Réseaux & Télécommunications</h5>
                         <h6 class="card-subtitle mb-2 text-info">2024 - 2025 (en cours)</h6>
                         <p class="card-text">IUT de Roanne</p>
@@ -115,7 +144,7 @@
                 </div>
                 
                 <div class="col-md-6 mb-4">
-                    <div class="glass-card">
+                    <div class="glass-card formation-card">
                         <h5 class="card-title">Terminale - Série Générale</h5>
                         <h6 class="card-subtitle mb-2 text-info">2021 - 2024</h6>
                         <p class="card-text">Lycée Galilée (Vienne, 38)</p>
@@ -223,7 +252,7 @@
             
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="glass-card h-100">
+                    <div class="glass-card competence-card h-100">
                         <h5 class="card-title text-info">
                             <i class="fas fa-network-wired"></i> Réseaux
                         </h5>
@@ -265,7 +294,7 @@
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <div class="glass-card h-100">
+                    <div class="glass-card competence-card h-100">
                         <h5 class="card-title text-info">
                             <i class="fas fa-server"></i> Systèmes
                         </h5>
@@ -307,7 +336,7 @@
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <div class="glass-card h-100">
+                    <div class="glass-card competence-card h-100">
                         <h5 class="card-title text-info">
                             <i class="fas fa-shield-alt"></i> Sécurité
                         </h5>
@@ -357,20 +386,45 @@
             <div class="modal-content bg-dark">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exportModalLabel">Exporter le Portfolio</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="d-grid gap-3">
-                        <button type="button" class="btn btn-outline-light" disabled>
-                            <i class="fas fa-file-word"></i> Format Word (.docx)
-                        </button>
-                        <button type="button" class="btn btn-outline-light" disabled>
-                            <i class="fas fa-file-pdf"></i> Format PDF (.pdf)
-                        </button>
-                    </div>
+                    <p class="text-light">Remplissez le formulaire ci-dessous pour recevoir une copie PDF de mon CV et portfolio.</p>
+                    <form id="exportForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label text-light">Nom</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-light">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label text-light">Message (optionnel)</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var myModal = new bootstrap.Modal(document.getElementById('exportModal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        
+        document.querySelector('[data-bs-target="#exportModal"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            myModal.show();
+        });
+    });
+</script>
 {% endblock %}
 

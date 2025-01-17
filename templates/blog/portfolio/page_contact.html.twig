@@ -2,14 +2,130 @@
 
 {% block title %}Contact Me{% endblock %}
 
-{% block body %}
-<h1 class="mb-4">Contact Me</h1>
+{% block stylesheets %}
+{{ parent() }}
+<style>
+    .parallax-header {
+        background-image: url('https://source.unsplash.com/random/1920x1080?technology');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Get in Touch</h2>
+    .parallax-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .page-title {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+    }
+
+    .contact-form {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .contact-form.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+    }
+
+    .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-primary {
+        background-color: rgba(0, 123, 255, 0.7);
+        border-color: rgba(0, 123, 255, 0.7);
+    }
+
+    .btn-primary:hover {
+        background-color: rgba(0, 123, 255, 0.9);
+        border-color: rgba(0, 123, 255, 0.9);
+    }
+
+    .btn-outline-primary {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline-primary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-info-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+
+    .social-icons {
+        font-size: 1.5rem;
+    }
+
+    .social-icons a {
+        color: #ffffff;
+        margin-right: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<header class="parallax-header">
+    <div class="parallax-overlay"></div>
+    <h1 class="page-title">Contact Me</h1>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="glass-card contact-form">
+                <h2 class="card-title mb-4">Get in Touch</h2>
                 <form>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -31,42 +147,53 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Contact Information</h2>
+        <div class="col-md-6 mb-4">
+            <div class="glass-card contact-form">
+                <h2 class="card-title mb-4">Contact Information</h2>
                 <ul class="list-unstyled">
-                    <li class="mb-2">
+                    <li class="mb-3">
+                        <i class="fas fa-envelope contact-info-icon"></i>
                         <strong>Email:</strong> your.email@example.com
                     </li>
-                    <li class="mb-2">
+                    <li class="mb-3">
+                        <i class="fas fa-phone contact-info-icon"></i>
                         <strong>Phone:</strong> +1 234 567 890
                     </li>
-                    <li class="mb-2">
+                    <li class="mb-3">
+                        <i class="fas fa-map-marker-alt contact-info-icon"></i>
                         <strong>Address:</strong> 123 Main St, City, Country
                     </li>
                 </ul>
-                <h3 class="mt-4">Connect with me</h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="bi bi-linkedin"></i> LinkedIn
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="bi bi-github"></i> GitHub
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="bi bi-twitter"></i> Twitter
-                        </a>
-                    </li>
-                </ul>
+                <h3 class="mt-5 mb-4">Connect with me</h3>
+                <div class="social-icons">
+                    <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-github"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForms = document.querySelectorAll('.contact-form');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        contactForms.forEach(form => {
+            observer.observe(form);
+        });
+    });
+</script>
+{% endblock %}
+
