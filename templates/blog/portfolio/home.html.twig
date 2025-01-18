@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bienvenue sur Mon E-Portfolio{% endblock %}
+{% block title %}E-Portfolio{% endblock %}
 
 {% block stylesheets %}
 {{ parent() }}
@@ -56,7 +56,7 @@
             </div>
             <div class="col-md-8">
                 <h1 class="display-4 mb-4">Bienvenue sur Mon E-Portfolio</h1>
-                <p class="lead">Je suis John Doe, un développeur full-stack passionné présentant mes compétences et projets.</p>
+                <p class="lead">Je suis Sotty Vincent, un étudiant de Réseaux et Télécoms passionné présentant mes compétences et projets.</p>
                 <hr class="my-4">
                 <p>Explorez mon travail, découvrez mon parcours et voyez comment je peux contribuer à votre équipe.</p>
                 <a class="btn btn-outline-light btn-lg mt-3" href="{{ path('app_cv') }}" role="button">Voir Mon CV</a>
@@ -116,10 +116,10 @@
             <div class="col-md-4 mb-4">
                 <div class="glass-card h-100">
                     <h5 class="card-title">Expérience</h5>
-                    <p>Plus de 5 ans d'expérience en développement web, dont :</p>
+                    <p>Je dispose de plusieurs expériences :</p>
                     <ul>
-                        <li>3 ans en tant que Développeur Full Stack chez TechCorp</li>
-                        <li>2 ans en tant que Développeur Frontend chez WebSolutions Inc.</li>
+                        <li>1 an en tant que développeur GLua sur une communauté Garry's Mod (Orion Community)</li>
+                        <li>3 Semaines de Stages chez SPIE Pharma</li>
                         <li>Plusieurs projets freelance</li>
                     </ul>
                 </div>
@@ -129,9 +129,9 @@
                     <h5 class="card-title">Projets</h5>
                     <p>Découvrez mes derniers projets :</p>
                     <ul>
-                        <li>Plateforme e-commerce pour produits artisanaux</li>
-                        <li>Application de gestion de tâches avec collaboration en temps réel</li>
-                        <li>Chatbot alimenté par IA pour le service client</li>
+                        <li>Création d'un site web type "Blog" pour valider compétences WEB</li>
+                        <li>Création d'une application Python permettant l'analyse de fichier logs pour vérifications réseau.</li>
+                        <li>Mise en place d'un LAN d'entreprise.</li>
                     </ul>
                     <a href="https://github.com/johndoe" class="btn btn-outline-light mt-3">Voir sur GitHub</a>
                 </div>
@@ -144,18 +144,18 @@
         <div class="glass-card">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="/placeholder.svg?height=300&width=500" alt="Capture d'écran du projet vedette" class="img-fluid rounded">
+                    <img src="{{ asset('images/home/featured_project.png') }}" alt="Capture d'écran du projet vedette" class="img-fluid rounded">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="mb-4">Plateforme E-commerce pour Produits Artisanaux</h3>
-                    <p>Un site e-commerce entièrement responsive construit avec Symfony et Vue.js, comprenant :</p>
+                    <h3 class="mb-4">Application Python pour Analyse Réseau</h3>
+                    <p>Contient les fonctionnalités suivantes :</p>
                     <ul>
-                        <li>Authentification des utilisateurs et profils</li>
-                        <li>Catalogue de produits avec filtrage avancé</li>
-                        <li>Panier d'achat et processus de paiement sécurisé</li>
-                        <li>Panneau d'administration pour la gestion des stocks</li>
+                        <li>Importations de fichier .log/.txt</li>
+                        <li>Exportations de fichier .CSV</li>
+                        <li>Visualisations graphiques des données, permettant une analyse poussée.</li>
+                        <li>Détection automatique (réduie) des menaces.</li>
                     </ul>
-                    <a href="#" class="btn btn-outline-light mt-3">Voir l'Étude de Cas</a>
+                    <a href="#" class="btn btn-outline-light mt-3">Lien GitHub</a>
                 </div>
             </div>
         </div>
