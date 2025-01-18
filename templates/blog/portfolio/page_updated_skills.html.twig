@@ -272,18 +272,18 @@
         }
         #projectCarousel {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         #projectCarousel .carousel-control-prev,
         #projectCarousel .carousel-control-next {
             width: 5%;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            height: 50px;
-            top: 50%;
-            transform: translateY(-50%);
+            background-color: transparent;
+            border-radius: 0;
+            height: 100%;
+            top: 0;
+            transform: none;
         }
 
         #projectCarousel .carousel-control-prev {
@@ -295,13 +295,27 @@
         }
 
         .project-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .project-card {
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .project-card .card-img-top {
+            height: 350px;
+            object-fit: cover;
         }
 
         .project-card .card-body {
             height: 200px;
             overflow-y: auto;
+        }
+
+        #projectCarousel .carousel-item {
+            transition: transform 0.6s ease-in-out;
         }
     </style>
 {% endblock %}
@@ -385,7 +399,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add more carousel items here -->
+                    <!-- Add more carousel items here if needed -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#certificationCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -608,15 +622,15 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                            AC1.01 : Organiser un poste de travail
+                                            AC13.02 Lire, exécuter, corriger et modifier un programme
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionProject1">
                                         <div class="accordion-body">
                                             <p>Mise en place d'un environnement de développement efficace pour le projet.</p>
                                             <div class="btn-group">
-                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                                <a href="https://docs.google.com/document/d/1hJK6kcEbOBtnX0U_X4_-33I73oH6sUdGgsDNHNyuR24/edit?tab=t.0" class="btn btn-primary btn-sm", target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1kQ4FgQ9tl2i7UjFWHv2PkpBksH8yTCaWj2w3ahKcMME/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
                                             </div>
                                         </div>
                                     </div>
@@ -624,15 +638,31 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            AC1.03 : Configurer un routeur
+                                            AC13.06 S’intégrer dans un environnement propice au développement et au travail collaboratif
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionProject1">
-                                        <div classbody>
+                                        <div class="accordion-body">
                                             <p>Configuration des équipements réseau pour la collecte de données.</p>
                                             <div class="btn-group">
-                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                                <a href="https://docs.google.com/document/d/1hCgyGsCfohUFeBgY6oaekrGwWzK9A9rMxF0FJJpbm-g/edit?tab=t.0" class="btn btn-primary btn-sm", target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1l_Fy_Vpml8RRgUTPnWzv-8JxAtUUysT7tLGHsALNg_0/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headinThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            AC13.05 Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProject1">
+                                        <div class="accordion-body">
+                                            <p>Configuration des équipements réseau pour la collecte de données.</p>
+                                            <div class="btn-group">
+                                                <a href="https://docs.google.com/document/d/1cCRJR8vy51_ZQ99KOvR0hrMnYTsZ1LdeHl9bELpy2X8/edit?tab=t.0" class="btn btn-primary btn-sm" target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1B3YetG0PZLUpzh8FcVNPAlapf2gMmpkZx1Db5vBDL5M/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
                                             </div>
                                         </div>
                                     </div>
@@ -643,10 +673,10 @@
                     <div class="carousel-item">
                         <div class="project-container">
                             <div class="card project-card">
-                                <img src="https://source.unsplash.com/random/800x600?network" class="card-img-top" alt="Project Image">
+                                <img src=" {{ asset('images/skills/project_02.png') }} " class="card-img-top" alt="Project Image">
                                 <div class="card-body">
-                                    <h5 class="card-title">Infrastructure de Développement Docker</h5>
-                                    <p class="card-text">Mise en place d'un environnement de développement local multi-services avec Docker Compose.</p>
+                                    <h5 class="card-title">Création d'un Blog</h5>
+                                    <p class="card-text">Création d'un Blog sans Framework pour justifier l'acquisition des compétences web de base "from scratch".</p>
                                     <a href="#" class="btn btn-primary">Voir le projet</a>
                                 </div>
                             </div>
@@ -654,15 +684,15 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            AC1.02 : Installer un système d'exploitation
+                                            AC13.02 Lire, exécuter, corriger et modifier un programme 
                                         </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProject2">
                                         <div class="accordion-body">
                                             <p>Configuration des conteneurs Docker avec différents systèmes d'exploitation.</p>
                                             <div class="btn-group">
-                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                                <a href="https://docs.google.com/document/d/1hJK6kcEbOBtnX0U_X4_-33I73oH6sUdGgsDNHNyuR24/edit?tab=t.0" class="btn btn-primary btn-sm", target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1kQ4FgQ9tl2i7UjFWHv2PkpBksH8yTCaWj2w3ahKcMME/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
                                             </div>
                                         </div>
                                     </div>
@@ -670,15 +700,61 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            AC1.04 : Configurer un commutateur
+                                            AC13.04 Connaître l’architecture et les technologies d’un site Web
                                         </button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionProject2">
                                         <div class="accordion-body">
                                             <p>Mise en place d'un réseau virtuel pour les conteneurs Docker.</p>
                                             <div class="btn-group">
-                                                <a href="#" class="btn btn-primary btn-sm">Ouvrir justificatif</a>
-                                                <a href="#" class="btn btn-secondary btn-sm">Ouvrir écrit réflexif</a>
+                                                <a href="https://docs.google.com/document/d/1znZVQurlDCfWCNkY7FcqQ4AS6XcVPOjNJw2zKLlHsWY/edit?tab=t.0" class="btn btn-primary btn-sm" target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1JSaybytZRPe0SWeyVI372kYjBQ_AFczotG6QoigA568/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-container">
+                            <div class="card project-card">
+                                <img src=" {{ asset('images/skills/project_03.png') }} " class="card-img-top" alt="Project Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Création d'un Serveur Samba pour Active Directory</h5>
+                                    <p class="card-text">Création d'un Blog sans Framework pour justifier l'acquisition des compétences web de base "from scratch".</p>
+                                    <a href="#" class="btn btn-primary">Voir le projet</a>
+                                </div>
+                            </div>
+                            <div class="accordion mt-3" id="accordionProject2">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            AC11.06 Installer un poste client, expliquer la procédure mise en place
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProject2">
+                                        <div class="accordion-body">
+                                            <p>Configuration des conteneurs Docker avec différents systèmes d'exploitation.</p>
+                                            <div class="btn-group">
+                                                <a href="https://docs.google.com/document/d/1ADYxzdFA3-PFr6RKVBXL7GdqEBMplNK8gH9m_QhyTWA/edit?tab=t.0" class="btn btn-primary btn-sm" target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/1R-WVigjaIIEh2VYDfIzg50oL9fcfi7RIaJpX-Qo3Gnk/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            AC11.04 Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionProject2">
+                                        <div class="accordion-body">
+                                            <p>Capacité à mettre en place et configurer des solutions pour la gestions des systèmes d'exploitation.</p>
+                                            <div class="btn-group">
+                                                <a href="https://docs.google.com/document/d/1MNLC50FbpR6dr_yNzWXC1RiW0iICkZuCW4DXGOWLZ6Q/edit?tab=t.0" class="btn btn-primary btn-sm" target="_blank">Ouvrir justificatif</a>
+                                                <a href="https://docs.google.com/document/d/12P-3KM9coMOaRhxh_LfRYztrGBYuciNeCns7PsX7umw/edit?tab=t.0" class="btn btn-secondary btn-sm" target="_blank">Ouvrir écrit réflexif</a>
                                             </div>
                                         </div>
                                     </div>
@@ -719,6 +795,17 @@
                 behavior: 'smooth'
             });
         });
+    });
+
+    // Initialize carousels
+    var certificationCarousel = new bootstrap.Carousel(document.querySelector('#certificationCarousel'), {
+        interval: 5000,
+        wrap: true
+    });
+
+    var projectCarousel = new bootstrap.Carousel(document.querySelector('#projectCarousel'), {
+        interval: false,
+        wrap: true
     });
 </script>
 {% endblock %}
