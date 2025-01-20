@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}E-Portfolio{% endblock %}
+{% block title %}Bienvenue sur Mon E-Portfolio{% endblock %}
 
 {% block stylesheets %}
 {{ parent() }}
@@ -44,27 +44,75 @@
     .btn-outline-light:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
+    .page-header {
+        background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(102, 16, 242, 0.1));
+        padding: 5rem 0;
+        margin-bottom: 3.75rem;
+        box-shadow: 0 5px 7.5px rgba(0,0,0,0.1);
+    }
+    .page-header h1 {
+        font-size: 3.75rem;
+        font-weight: 700;
+        text-shadow: 2.5px 2.5px 5px rgba(0,0,0,0.1);
+        color: #ffffff;
+    }
+    .page-header .lead {
+        font-size: 1.5625rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
+    .nav-pills .nav-link {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 37.5px;
+        padding: 0.625rem 1.25rem;
+        margin: 0.3125rem;
+        transition: all 0.3s ease;
+    }
+    .nav-pills .nav-link:hover {
+        transform: translateY(-2.5px);
+        box-shadow: 0 5px 7.5px rgba(255,255,255,0.1);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 </style>
 {% endblock %}
 
 {% block body %}
-<div class="container py-5">
-    <div class="glass-card mb-5">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img src=" {{ asset('images/home/profile_header.jpg') }} " alt="Photo de profil" class="profile-image mb-3">
-            </div>
-            <div class="col-md-8">
-                <h1 class="display-4 mb-4">Bienvenue sur Mon E-Portfolio</h1>
-                <p class="lead">Je suis Sotty Vincent, un étudiant de Réseaux et Télécoms passionné présentant mes compétences et projets.</p>
-                <hr class="my-4">
-                <p>Explorez mon travail, découvrez mon parcours et voyez comment je peux contribuer à votre équipe.</p>
-                <a class="btn btn-outline-light btn-lg mt-3" href="{{ path('app_cv') }}" role="button">Voir Mon CV</a>
-            </div>
-        </div>
+<header class="page-header text-white text-center">
+    <div class="container">
+        <h1 class="display-4 mb-4">Bienvenue sur Mon E-Portfolio</h1>
+        <p class="lead mb-5">Je suis Sotty Vincent, un étudiant de Réseaux et Télécoms passionné présentant mes compétences et projets.</p>
+        <nav class="mt-4">
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#a-propos">
+                        <i class="fas fa-info-circle me-2"></i>À Propos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#apercu-rapide">
+                        <i class="fas fa-bolt me-2"></i>Aperçu Rapide
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projet-vedette">
+                        <i class="fas fa-star me-2"></i>Projet en Vedette
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#en-savoir-plus">
+                        <i class="fas fa-user me-2"></i>En Savoir Plus
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
+</header>
 
-    <section class="mb-5">
+<div class="container py-5">
+
+    <section class="mb-5" id="a-propos">
         <h2 class="section-title">À Propos de Ce Site</h2>
         <p class="text-center mb-5">Cet e-portfolio est une vitrine complète de mon parcours professionnel, de mes compétences et de mes réalisations. Voici ce que vous y trouverez :</p>
         <div class="row">
@@ -98,7 +146,7 @@
         </div>
     </section>
 
-    <section class="mb-5">
+    <section class="mb-5" id="apercu-rapide">
         <h2 class="section-title">Aperçu Rapide</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
@@ -107,8 +155,8 @@
                     <ul class="list-unstyled">
                         <li><i class="fas fa-check-circle text-success me-2"></i> HTML, CSS, JavaScript</li>
                         <li><i class="fas fa-check-circle text-success me-2"></i> PHP, Symfony</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> React, Vue.js</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> MySQL, MongoDB</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> GLua, Lua</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> MySQL, MongoDB, SQLoo</li>
                         <li><i class="fas fa-check-circle text-success me-2"></i> Git, Docker</li>
                     </ul>
                 </div>
@@ -139,7 +187,7 @@
         </div>
     </section>
 
-    <section class="mb-5">
+    <section class="mb-5" id="projet-vedette">
         <h2 class="section-title"><i class="fas fa-star me-2"></i>Projet en Vedette</h2>
         <div class="glass-card">
             <div class="row align-items-center">
@@ -157,6 +205,16 @@
                     </ul>
                     <a href="#" class="btn btn-outline-light mt-3">Lien GitHub</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5" id="en-savoir-plus">
+        <div class="glass-card">
+            <h2 class="section-title"><i class="fas fa-info-circle me-2"></i>En savoir plus</h2>
+            <p class="text-center mb-4">Si vous souhaitez en apprendre davantage sur mon parcours, mes passions et mes projets personnels, n'hésitez pas à consulter ma page personnelle.</p>
+            <div class="text-center">
+                <a href="{{ path('app_personal') }}" class="btn btn-outline-light btn-lg"><i class="fas fa-user me-2"></i>Découvrir mon profil</a>
             </div>
         </div>
     </section>
